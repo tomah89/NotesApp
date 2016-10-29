@@ -19,6 +19,10 @@ export class NoteComponent implements OnInit {
       {
         subject: "Second test",
         body: "Second test message"
+      },
+      {
+        subject: "Third test",
+        body: "Third test message"
       }
     ]
   }

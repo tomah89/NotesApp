@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 body {
     background-color: #F7EAC0;
     color: #E09D8B;
     font-family: 'Oswald', sans-serif;
+}
+
+.fl {
+    float: left;
+}
+
+.rounded {
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .clearfix::after {
@@ -10,4 +21,35 @@ body {
     width: 0;
     content: ".";
     clear: both;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+input[type='button'] {
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #F7EAC0;
+    border: 2px solid #F0BD89;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+input[type='button']:hover {
+    background-color: #F0BD89;
+}
+
+input[type='button']:active {
+    background-color: #E09D8B;
+}
+
+input[type='button']:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }

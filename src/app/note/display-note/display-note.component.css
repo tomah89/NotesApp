@@ -1,16 +1,25 @@
 .box {
     background-color:#DAD8C0 ;
     width: 200px;
+    min-height: 200px;
     margin: 10px;
-    padding: 5px;
     box-shadow:  10px 10px 5px #888888;
     color: black;
+    display: inline-block;
 }
 
-.box.rounded {
-    border-radius: 10px;
+.box > .header {
+    text-align: center;    
+    background-color: #F0BD89;
+    font-weight: 900;
+    padding: 10px 0;
+    transition-duration: 0.4s;
 }
 
-.fl {
-    float: left;
+.box:hover > .header {
+    background-color: #E09D8B;
+}
+
+.box .body {
+    padding: 5px;
 }
