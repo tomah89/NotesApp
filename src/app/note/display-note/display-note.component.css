@@ -1,10 +1,10 @@
 .box {
-    border: 1px solid #919D7F;
     background-color:#DAD8C0 ;
     width: 200px;
     margin: 10px;
     padding: 5px;
     box-shadow:  10px 10px 5px #888888;
+    color: black;
 }
 
 .box.rounded {

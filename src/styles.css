@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 body {
-    background-color: #FFFED9;
+    background-color: #F7EAC0;
+    color: #E09D8B;
+    font-family: 'Oswald', sans-serif;
 }
 
 .clearfix::after {
