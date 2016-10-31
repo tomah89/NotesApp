@@ -2,7 +2,7 @@
 	<input type="button" value="Utwórz notatkę">
 </div>
 
-<add-note></add-note>
+<add-note (onSubmitted)="onSubmit($event)"></add-note>
 
 <div class="list">
 	<display-note [note]="note" *ngFor="let note of notes"></display-note>

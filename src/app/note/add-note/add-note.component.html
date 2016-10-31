@@ -1,8 +1,15 @@
-<div>
-  <label>Tytuł</label>
-  <input type="text">
-</div>
-<div>
-  <label>Notatka</label>
-  <input type="text">
-</div>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+	<div>
+		<label>Tytuł</label>
+		<input type="text" ngModel name="subject">
+	</div>
+	<div>
+		<label>Notatka</label>
+		<input type="text" ngModel name="body">
+	</div>
+	<div>
+		<input type="submit" value="Dodaj">
+	</div>
+</form>
+
+{{ f.value | json}}

@@ -27,4 +27,8 @@ export class NoteComponent implements OnInit {
     ]
   }
 
+  onSubmit(newNote){
+    this.notes.push(newNote);
+  }
+
 }
