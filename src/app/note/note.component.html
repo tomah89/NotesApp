@@ -1,8 +1,8 @@
 <div class="mb-10">
-	<input type="button" value="Utwórz notatkę">
+	<input type="button" value="Utwórz notatkę" *ngIf="!isAddingNewNote" (click)="isAddingNewNote = !isAddingNewNote">
 </div>
 
-<add-note (onSubmitted)="onSubmit($event)"></add-note>
+<add-note *ngIf="isAddingNewNote" (onSubmitted)="onSubmit($event)" (onCancelled)="isAddingNewNote = false"></add-note>
 
 <div class="list">
 	<display-note [note]="note" *ngFor="let note of notes"></display-note>

@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class AddNoteComponent implements OnInit {
   @Output() onSubmitted: EventEmitter<any> = new EventEmitter();
+  @Output() onCancelled: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -15,5 +16,9 @@ export class AddNoteComponent implements OnInit {
 
   onSubmit(newNote){
     this.onSubmitted.emit(newNote);
+  }
+
+  onCancel(){
+    this.onCancelled.emit();
   }
 }

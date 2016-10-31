@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteComponent implements OnInit {
   public notes = [];
+  public isAddingNewNote: boolean = false;
 
   constructor() { }
 
