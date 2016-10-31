@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NoteService } from './note.service';
+
 @Component({
   selector: 'note',
   templateUrl: './note.component.html',
@@ -9,23 +11,15 @@ export class NoteComponent implements OnInit {
   public notes = [];
   public isAddingNewNote: boolean = false;
 
-  constructor() { }
+  constructor(private noteService: NoteService) { 
+
+  }
 
   ngOnInit() {
-    this.notes = [
-      {
-        subject: "Test",
-        body: "Test message"
-      },
-      {
-        subject: "Second test",
-        body: "Second test message"
-      },
-      {
-        subject: "Third test",
-        body: "Third test message"
-      }
-    ]
+    this.noteService.fetchNotes()
+      .subscribe(data => {
+        this.notes = data;
+      });
   }
 
   onSubmit(newNote){

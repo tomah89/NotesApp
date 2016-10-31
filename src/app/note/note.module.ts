@@ -5,6 +5,8 @@ import { DisplayNoteComponent } from './display-note/display-note.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { FormsModule } from '@angular/forms';
 
+import { NoteService } from './note.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,6 +14,9 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     NoteComponent
+  ],
+  providers: [
+    NoteService
   ],
   declarations: [NoteComponent, DisplayNoteComponent, AddNoteComponent]
 })

@@ -1,0 +1,14 @@
+[
+    {
+        "subject": "Test",
+        "body": "Test message"
+    },
+    {
+        "subject": "Second test",
+        "body": "Second test message"
+    },
+    {
+        "subject": "Third test",
+        "body": "Third test message"
+    }
+]
