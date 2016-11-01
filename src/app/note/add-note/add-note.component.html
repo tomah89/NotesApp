@@ -1,14 +1,14 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
 	<div>
 		<label>Tytuł</label>
-		<input type="text" ngModel name="subject">
+		<input type="text" ngModel name="subject" required>
 	</div>
 	<div>
 		<label>Notatka</label>
-		<input type="text" ngModel name="body">
+		<input type="text" ngModel name="body" required>
 	</div>
 	<div>
-		<input type="submit" value="Dodaj">
+		<input type="submit" value="Dodaj" [disabled]="!f.form.valid">
     <input type="button" value="Anuluj" (click)="onCancel()">
 	</div>
 </form>
