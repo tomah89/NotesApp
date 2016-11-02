@@ -1,22 +1,22 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+<form novalidate (ngSubmit)="onSubmit(addNoteForm.value)" [formGroup]="addNoteForm">
 	<div>
 		<label>Tytuł</label>
-		<input type="text" ngModel name="subject" required #text="ngModel">
-		<div [hidden]="text.valid || text.pristine">
+		<input type="text" formControlName="subject">
+		<div *ngIf="addNoteForm.get('subject').hasError('required') && addNoteForm.get('subject').touched">
 			Musisz wprowadzić temat.
 		</div>
 	</div>
 	<div>
 		<label>Notatka</label>
-		<input type="text" ngModel name="body" required #body="ngModel">
-		<div [hidden]="body.valid || body.pristine">
+		<input type="text" formControlName="body">
+		<div *ngIf="addNoteForm.get('body').hasError('required') && addNoteForm.get('body').touched">
 			Musisz wprowadzić tekst.
 		</div>
 	</div>
 	<div>
-		<input type="submit" value="Dodaj" [disabled]="!f.form.valid">
+		<input type="submit" value="Dodaj" [disabled]="addNoteForm.invalid">
     <input type="button" value="Anuluj" (click)="onCancel()">
 	</div>
 </form>
 
-{{ f.value | json}}
+{{ addNoteForm.value | json}}
