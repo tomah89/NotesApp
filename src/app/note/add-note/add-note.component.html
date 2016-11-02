@@ -1,11 +1,17 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
 	<div>
 		<label>Tytuł</label>
-		<input type="text" ngModel name="subject" required>
+		<input type="text" ngModel name="subject" required #text="ngModel">
+		<div [hidden]="text.valid || text.pristine">
+			Musisz wprowadzić temat.
+		</div>
 	</div>
 	<div>
 		<label>Notatka</label>
-		<input type="text" ngModel name="body" required>
+		<input type="text" ngModel name="body" required #body="ngModel">
+		<div [hidden]="body.valid || body.pristine">
+			Musisz wprowadzić tekst.
+		</div>
 	</div>
 	<div>
 		<input type="submit" value="Dodaj" [disabled]="!f.form.valid">
